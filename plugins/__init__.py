@@ -31,7 +31,7 @@ async def ban_reply(bot, message):
 
 @Client.on_message(filters.group & filters.incoming & filters.create(disabled_chat))
 async def grp_bd(bot, message):
-    buttons = [[InlineKeyboardButton('Sᴜᴩᴩᴏʀᴛ', url=f'https://t.me/{SUPPORT_CHAT}')]]
+    buttons = [[InlineKeyboardButton('Sᴜᴩᴩᴏʀᴛ', url=f'https://t.me/cinemalakay_group')]]
     chat = await db.get_chat(message.chat.id)
     k = await message.reply(text=f"CHAT NON AUTORISÉ 🐞\n\nMon administrateur m'a empêché de travailler ici ! Si vous souhaitez en savoir plus, contactez le support..\nRᴇᴀꜱᴏɴ : <code>{chat['reason']}</code>.", reply_markup=InlineKeyboardMarkup(buttons))
     try: await k.pin()
